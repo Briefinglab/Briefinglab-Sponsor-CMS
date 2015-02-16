@@ -1,0 +1,5 @@
+PLUGIN_NAME -> wp secure attachments
+PLUGIN_GIT_REP_NAME -> online-magazine
+PLUGIN_SLUG_NAME_UNDERSCORED -> online_magazine
+PLUGIN_CLASS_NAME_BASE -> Online_Magazine
+
