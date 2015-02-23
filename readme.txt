@@ -1,5 +1,5 @@
-=== BriefingLab Sponsor CMS ===
-Contributors: BriefingLab, Luca Maroni
+=== Briefinglab Sponsor CMS ===
+Contributors: Briefinglab, Luca Maroni
 Donate link: http://briefinglab.com
 Tags: Wordpress, Sponsor, Manage Slide Content, Simply Sponsor CMS
 Requires at least: 3.9.1

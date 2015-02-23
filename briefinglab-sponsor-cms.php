@@ -7,8 +7,8 @@
  * Each issue contains article grouped by category/rubric.
  * *
  * @wordpress-plugin
- * Plugin Name: BriefingLab Sponsor CMS
- * Contributors: BriefingLab, Luca Maroni
+ * Plugin Name: Briefinglab Sponsor CMS
+ * Contributors: Briefinglab, Luca Maroni
  * Donate link: http://briefinglab.com
  * Plugin URI: http://briefinglab.com
  * Description: Plugin to manage content of your sponsor/s. No mix between content and view. just manage the content and then optimize your output. only for developers that are not interested to integrate complex and heavy adn not performat sponsors.

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-BriefingLab Sponsor CMS
+Briefinglab Sponsor CMS
 ===============
 
 OK there are a lot of plugin to manage your sponsors. Plugins full of effects and very nice feature, really impressive. But ok when you install it you have tons of features and tons of JS included that yo really need? always?
@@ -27,7 +26,7 @@ bl-sponsor-item-template-slug
 
 overwrite priority
 =======
-BriefingLab News CMS
+Briefinglab News CMS
 ===============
 
 This plugin give you a CMS section to manage the news, events and fair content with the usual and very well known WordPress paradigm. Then it will provide you the possibility to implement
