@@ -99,15 +99,13 @@ class Bl_Sponsor_Cms_Manager_Admin {
     }
 
     function add_meta_box_linking_sponsor() {
-        global $post_type;        
 
-        add_meta_box('linking_posts_list', 
+        add_meta_box('linking_posts_list',
             __("Linking Sponsor", 'linking-sponsor'), 
             array($this, 'render_meta_box_linking_sponsor'), 
-            $post_type , 
+            'bl-sponsor' ,
             'side'
         );
-        
 
     }
 
