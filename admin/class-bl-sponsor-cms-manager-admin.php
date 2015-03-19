@@ -118,27 +118,14 @@ class Bl_Sponsor_Cms_Manager_Admin {
 
     }
 
-    /**
-     * When the post is saved, saves our custom data.
-     *
-     * @param int $post_id The ID of the post being saved.
-     */
     function save_meta_box_linking_sponsor( $post_id ) {
-        /*
-         * We need to verify this came from the our screen and with proper authorization,
-         * because save_post can be triggered at other times.
-         */
 
-        // Check if our nonce is set.
         if ( ! isset( $_POST['meta_box_linking_sponsor'] ) )
             return $post_id;
 
-        // If this is an autosave, our form has not been submitted,
-                //     so we don't want to do anything.
-        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
             return $post_id;
 
-        // Check the user's permissions.
         if ( 'page' == $_POST['post_type'] ) {
 
             if ( ! current_user_can( 'edit_page', $post_id ) )
@@ -150,13 +137,10 @@ class Bl_Sponsor_Cms_Manager_Admin {
                 return $post_id;
         }
         
-        /* OK, its safe for us to save the data now. */
-
-        // Sanitize the user input.
         $mydata = sanitize_text_field( $_POST['meta_box_linking_sponsor'] );
 
-        // Update the meta field.
         update_post_meta( $post_id, 'meta_box_linking_sponsor', $mydata );
+
     }
 
     
