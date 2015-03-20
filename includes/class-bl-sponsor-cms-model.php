@@ -17,7 +17,8 @@ class Bl_Sponsor_Cms_Model {
 
         $args = array(
             'post_type' => 'bl-sponsor',
-            'limit' => $atts['limit']
+            'limit' => $atts['limit'],
+            'suppress_filters' => 0
         );
 
         if( ! empty ( $atts['categories'] ) ){

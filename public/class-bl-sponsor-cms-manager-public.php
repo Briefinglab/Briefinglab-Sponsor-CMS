@@ -35,9 +35,9 @@ class Bl_Sponsor_Cms_Manager_Public {
 
     private function render_bl_sponsor( $bl_slides, $atts ){
 
-        global $bl_sponsors_printed;
+        global $bl_sponsors_printed, $locale;
 
-        $id_cache = $this->data_model->create_id_cache_html( serialize($atts) );
+        $id_cache = $this->data_model->create_id_cache_html( 'bl-sponsor-' . $locale . serialize($atts) );
 
         $html_carousel = $this->data_model->has_cached_html( $id_cache );
 
