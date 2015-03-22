@@ -50,6 +50,7 @@ class Bl_Sponsor_Cms_Manager_Admin {
             'has_archive'        => true,
             'hierarchical'       => false,
             'map_meta_cap'       => true,
+            'exclude_from_search'=> true,
             'menu_position'      => null,
             'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' )
         );
