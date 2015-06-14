@@ -118,7 +118,13 @@ class Bl_Sponsor_Cms_Manager {
 
         $data_model = Bl_Sponsor_Cms_Model::getInstance();
 
-        $admin = new Bl_Sponsor_Cms_Manager_Admin( $this->get_version(), $this->options, $data_model );
+        $upload_dir = wp_upload_dir();
+
+        $upload_dir = $upload_dir['basedir'] . "/bl-sponsor/";
+
+        $cache_manager = new Bl_Cache_Html_Manager( $upload_dir );
+
+        $admin = new Bl_Sponsor_Cms_Manager_Admin( $this->get_version(), $this->options, $data_model, $cache_manager  );
 
         $this->loader->add_action( 'init', $admin, 'register_bl_sponsor_post_type' );
         $this->loader->add_action( 'add_meta_boxes',$admin , 'add_meta_box_linking_sponsor' );

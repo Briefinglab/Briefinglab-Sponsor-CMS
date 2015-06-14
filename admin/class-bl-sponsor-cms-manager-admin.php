@@ -8,7 +8,7 @@ class Bl_Sponsor_Cms_Manager_Admin {
 
     private $options;
 
-    function __construct( $version, $options, $data_model )
+    function __construct( $version, $options, $data_model, $cache_manager )
     {
 
         $this->version = $version;
@@ -16,6 +16,8 @@ class Bl_Sponsor_Cms_Manager_Admin {
         $this->options = $options;
 
         $this->data_model = $data_model;
+
+        $this->cache_manager = $cache_manager;
 
     }
 
@@ -45,7 +47,7 @@ class Bl_Sponsor_Cms_Manager_Admin {
             'show_ui'            => true,
             'show_in_menu'       => true,
             'query_var'          => true,
-            'rewrite'            => array( 'slug' => 'slide' ),
+            'rewrite'            => array( 'slug' => 'sponsor' ),
             'capability_type'    => 'post',
             'has_archive'        => true,
             'hierarchical'       => false,
@@ -58,17 +60,17 @@ class Bl_Sponsor_Cms_Manager_Admin {
         register_post_type( 'bl-sponsor', $args );
 
         $sponsor_category_labels = array(
-            'name' => __( 'Category', 'bl-sponsor-cms' ),
-            'singular_name' => __( 'Categoria', 'bl-sponsor-cms' ),
-            'search_items' =>  __( 'Search Category', 'bl-sponsor-cms' ),
-            'all_items' => __( 'All Categories', 'bl-sponsor-cms' ),
-            'parent_item' => __( 'Parent Category', 'bl-sponsor-cms' ),
-            'parent_item_colon' => __( 'Parent Category', 'bl-sponsor-cms' ),
-            'edit_item' => __( 'Edit Category', 'bl-sponsor-cms' ),
-            'update_item' => __( 'Update Category', 'bl-sponsor-cms' ),
-            'add_new_item' => __( 'Add New Category', 'bl-sponsor-cms' ),
-            'new_item_name' => __( 'New Category', 'bl-sponsor-cms' ),
-            'menu_name' => __( 'Category', 'bl-sponsor-cms' ),
+            'name' => __( 'Categoria sponsor', 'bl-sponsor-cms' ),
+            'singular_name' => __( 'Categoria sponsor', 'bl-sponsor-cms' ),
+            'search_items' =>  __( 'Search Categoria sponsor', 'bl-sponsor-cms' ),
+            'all_items' => __( 'All Categorie sponsor', 'bl-sponsor-cms' ),
+            'parent_item' => __( 'Parent Categoria sponsor', 'bl-sponsor-cms' ),
+            'parent_item_colon' => __( 'Parent Categoria sponsor', 'bl-sponsor-cms' ),
+            'edit_item' => __( 'Edit Categoria sponsor', 'bl-sponsor-cms' ),
+            'update_item' => __( 'Update Categoria sponsor', 'bl-sponsor-cms' ),
+            'add_new_item' => __( 'Add New Categoria sponsor', 'bl-sponsor-cms' ),
+            'new_item_name' => __( 'New Categora sponsor', 'bl-sponsor-cms' ),
+            'menu_name' => __( 'Categoria Sponsor', 'bl-sponsor-cms' ),
         );
 
         $sponsor_category_args = array(
@@ -77,7 +79,7 @@ class Bl_Sponsor_Cms_Manager_Admin {
             'show_ui' => true,
             'show_admin_column' => true,
             'query_var' => true,
-            'rewrite' => array( 'slug' => 'rubrics' ),
+            'rewrite' => array( 'slug' => 'sponsors' ),
             'show_in_nav_menus' => true,
         );
 

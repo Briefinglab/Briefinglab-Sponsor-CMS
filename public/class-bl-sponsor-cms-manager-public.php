@@ -33,7 +33,7 @@ class Bl_Sponsor_Cms_Manager_Public {
     }
 
 
-    private function render_bl_sponsor( $bl_slides, $atts ){
+    private function render_bl_sponsor( $bl_sponsors, $atts ){
 
         global $bl_sponsors_printed, $locale;
 
@@ -41,19 +41,19 @@ class Bl_Sponsor_Cms_Manager_Public {
 
         $html_carousel = $this->data_model->has_cached_html( $id_cache );
 
-        if( false === $html_carousel ){
+        if( false === $html_carousel || WP_DEBUG ){
 
             ob_start();
 
-            $this->include_start_bl_sponsor_template( $bl_slides, $atts );
+            $this->include_start_bl_sponsor_template( $bl_sponsors, $atts );
 
-            foreach( $bl_slides as $bl_slide_index => $bl_slide ){
+            foreach( $bl_sponsors as $bl_slide_index => $bl_sponsor ){
 
-                $this->include_item_bl_sponsor_template( $bl_slide, $bl_slide_index, $atts );
+                $this->include_item_bl_sponsor_template( $bl_sponsor, $bl_slide_index, $atts );
 
             }
 
-            $this->include_end_bl_sponsor_template( $bl_slides, $atts );
+            $this->include_end_bl_sponsor_template( $bl_sponsor, $atts );
 
             $html_carousel = ob_get_clean();
 
@@ -82,21 +82,21 @@ class Bl_Sponsor_Cms_Manager_Public {
     }
 
 
-    private function include_start_bl_sponsor_template( $bl_slides, $atts ){
+    private function include_start_bl_sponsor_template( $bl_sponsors, $atts ){
 
         include $this->locate_template_bl_sponsor( 'start-sponsor.php', $atts );
 
     }
 
 
-    private function include_end_bl_sponsor_template( $bl_slides, $atts ){
+    private function include_end_bl_sponsor_template( $bl_sponsors, $atts ){
 
         include $this->locate_template_bl_sponsor( 'end-sponsor.php', $atts );
 
     }
 
-    private function include_item_bl_sponsor_template( $bl_slide, $bl_slide_index, $atts ){
-        $bl_slides->link_sponsor = get_post_meta( $bl_slide->ID, 'meta_box_linking_sponsor', true );
+    private function include_item_bl_sponsor_template( $bl_sponsor, $bl_slide_index, $atts ){
+        $bl_slides->link_sponsor = get_post_meta( $bl_sponsor->ID, 'meta_box_linking_sponsor', true );
         include $this->locate_template_bl_sponsor( 'item-sponsor.php', $atts );
 
     }
